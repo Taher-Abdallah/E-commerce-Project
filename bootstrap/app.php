@@ -13,7 +13,7 @@ use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
-        web: __DIR__.'/../routes/web.php',
+        // web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
         
@@ -31,6 +31,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })
-
+    // for all web routes
+    ->withRouting(function () {
+        Route::prefix(LaravelLocalization::setLocale())
+            ->middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
+            ->group(base_path('routes/web.php'));
+    })
 
     ->create();
