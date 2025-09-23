@@ -167,6 +167,11 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'g-recaptcha-response'=>
+        [
+            'required' => 'يرجى التاكد من انك لست ربوت',
+            'captcha' => 'يرجى التاكد من انك لست ربوت',
+        ],
     ],
 
     /*

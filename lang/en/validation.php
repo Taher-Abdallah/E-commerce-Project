@@ -181,6 +181,11 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'g-recaptcha-response' =>
+        [
+            'required' => ' Please check you are not robot',
+            'captcha' => ' Please check you are not robot',
+        ],
     ],
 
     /*
