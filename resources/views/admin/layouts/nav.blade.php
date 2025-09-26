@@ -107,7 +107,8 @@
                                           <div class="card-header p-0 pb-2 border-0" id="headingOne" role="tab">
                                               <a data-toggle="collapse" data-parent="#accordionWrap"
                                                   href="#accordionOne" aria-expanded="true"
-                                                  aria-controls="accordionOne">Accordion Item #1</a></div>
+                                                  aria-controls="accordionOne">Accordion Item #1</a>
+                                          </div>
                                           <div class="card-collapse collapse show" id="accordionOne" role="tabpanel"
                                               aria-labelledby="headingOne" aria-expanded="true">
                                               <div class="card-content">
@@ -121,7 +122,8 @@
                                               <a class="collapsed" data-toggle="collapse"
                                                   data-parent="#accordionWrap" href="#accordionTwo"
                                                   aria-expanded="false" aria-controls="accordionTwo">Accordion Item
-                                                  #2</a></div>
+                                                  #2</a>
+                                          </div>
                                           <div class="card-collapse collapse" id="accordionTwo" role="tabpanel"
                                               aria-labelledby="headingTwo" aria-expanded="false">
                                               <div class="card-content">
@@ -221,13 +223,16 @@
                               <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
                               <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
                               <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                              <form method="POST" action="{{ route('admin.logout') }}">
+                              <a href="{{ route('logout') }}"
+                                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                  Logout
+                              </a>
+
+                              <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
+                                  style="display: none;">
                                   @csrf
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="javascript:void(0)"
-                                      onclick="event.preventDefault(); this.closest('form').submit();"><i
-                                          class="ft-power">
-                                      </i> Logout</a>
+                              </form>
+
                           </div>
                       </li>
                       <li class="dropdown dropdown-language nav-item">

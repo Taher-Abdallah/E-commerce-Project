@@ -11,6 +11,7 @@
             </li>
           </ul>
         </li>
+           <x-has-access permission="roles" >
         <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">Templates</span></a>
           <ul class="menu-content">
             <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">Vertical</a>
@@ -37,6 +38,7 @@
             </li>
           </ul>
         </li>
+      </x-has-access >
         <li class=" navigation-header">
           <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Layouts"></i>

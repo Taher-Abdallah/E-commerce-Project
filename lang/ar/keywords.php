@@ -13,5 +13,16 @@ return[
     'token'=>'رمز التحقق',
     'reset_password'=>'استعادة كلمة المرور',
     'confirm_password'=>'تأكيد كلمة المرور',
+    'dashboard'=>'لوحة التحكم',
+    'roles'=>'الصلاحيات',
+    'add'=>'اضافة',
+    'edit'=>'تعديل',
+    'role_name'=>'اسم الصلاحية',
+    'permissions'=>'الصلاحيات',
+    'operations'=>'العمليات',
+    'update'=>'تعديل',
+    'delete'=>'حذف',
+    'add_role'=>'اضافة صلاحية جديدة',
+    'add_permission'=>'اضافة صلاحية جديدة',
 
 ];

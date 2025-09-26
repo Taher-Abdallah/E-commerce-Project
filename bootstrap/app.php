@@ -28,7 +28,8 @@ return Application::configure(basePath: dirname(__DIR__))
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'admin' => \App\Http\Middleware\AdminAuthinticate::class
+        'admin' => \App\Http\Middleware\AdminAuthinticate::class,
+        'perm'=>\App\Http\Middleware\CheckPermession::class
         
     ]);
     })

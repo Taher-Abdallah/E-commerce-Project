@@ -11,5 +11,16 @@ return[
     'token'=>'Token',
     'reset_password'=>'Reset Password',
     'confirm_password'=>'Confirm Password',
+    'dashboard'=>'Dashboard',
+    'roles'=>'Roles',
+    'add'=>'Add',
+    'edit'=>'Edit',
+    'role_name'=>'Role Name',
+    'permissions'=>'Permissions',
+    'operations'=>'Operations',
+    'update'=>'Update',
+    'delete'=>'Delete',
+    'add_role'=>'Add Role',
+    'add_permission'=>'Add Permission',
 
 ];
