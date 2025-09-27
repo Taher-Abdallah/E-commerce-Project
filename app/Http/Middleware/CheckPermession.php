@@ -16,8 +16,9 @@ class CheckPermession
      */
     public function handle(Request $request, Closure $next, $permission): Response
     {
-        if(Auth::guard('admin')->user()->hasAccess($permission)) {
-            
+        $admin=Auth::guard('admin')->user();
+        if($admin->hasAccess($permission) && $admin->status == 1) {
+
             return $next($request);
         } abort(403);
     }

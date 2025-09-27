@@ -17,7 +17,8 @@ class AdminSeeder extends Seeder
             'name' => 'Taher Abdallah',
             'email' => 'taher2@gmail.com',
             'password' => bcrypt('12345678'),
-            'role_id' => '2',
+            'role_id' => '1',
+            
 
         ]);
     }

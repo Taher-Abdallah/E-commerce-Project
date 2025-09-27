@@ -22,5 +22,11 @@ return[
     'delete'=>'Delete',
     'add_role'=>'Add Role',
     'add_permission'=>'Add Permission',
+    'name'=> 'Name',
+    'role'=>'Role',
+    'status'=>'Status',
+    'created_at'=>'Created At',
+    'admins'=>'Admins',
+    
 
 ];

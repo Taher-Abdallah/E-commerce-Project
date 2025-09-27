@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Admin;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Database\Eloquent\Model;
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        //use bootstrab
+        Paginator::useBootstrap();
 
         Model::unguard();
 

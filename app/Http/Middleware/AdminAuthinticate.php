@@ -16,9 +16,15 @@ class AdminAuthinticate
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::guard('admin')->check()) {
-            return redirect()->route('admin.login');
+        $admin = Auth::guard('admin')->user();
+
+        // لو الادمن موجود وحالته Inactive
+        if ($admin && $admin->status == 0) {
+            Auth::guard('admin')->logout();
+            return redirect()->route('admin.login')
+                ->with('error', 'Your account has been deactivated.');
         }
+
         return $next($request);
     }
 }
