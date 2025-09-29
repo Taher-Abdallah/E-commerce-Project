@@ -11,7 +11,53 @@
             </li>
           </ul>
         </li>
-           <x-has-access permission="roles" >
+                                                            {{-- roles  --}}
+      @can('roles')
+                <li class=" nav-item"><a href="#"><i class="la la-unlock-alt"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('keywords.roles') }}</span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.roles.create') }}" data-i18n="">
+                                {{ __('keywords.create_role') }} </a>
+                        </li>
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.roles.index') }}"
+                                data-i18n="">{{ __('keywords.roles') }} </a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+
+            @can('admins')
+                <li class=" nav-item"><a href="#"><i class="la la-user-secret"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('keywords.admins') }}</span><span
+                            class="badge badge badge-info badge-pill float-right mr-2">1</span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.admins.create') }}"
+                                data-i18n="">{{ __('keywords.create_admin') }} </a>
+                        </li>
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.admins.index') }}"
+                                data-i18n="">{{ __('keywords.admins') }}</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+
+            @can('global_shipping')
+                <li class=" nav-item"><a href="#"><i class="la la-ambulance"></i><span class="menu-title"
+                            data-i18n="nav.templates.main"> {{ __('keywords.shipping') }} </span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.countries.index') }}"
+                                data-i18n="">{{ __('keywords.shippping') }}</a>
+                        </li>
+
+                    </ul>
+                </li>
+            @endcan
+           {{-- <x-has-access permission="roles" > --}}
         <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">Templates</span></a>
           <ul class="menu-content">
             <li><a class="menu-item" href="#" data-i18n="nav.templates.vert.main">Vertical</a>
@@ -38,7 +84,7 @@
             </li>
           </ul>
         </li>
-      </x-has-access >
+      {{-- </x-has-access > --}}
         <li class=" navigation-header">
           <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Layouts"></i>

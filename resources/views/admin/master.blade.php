@@ -13,5 +13,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
  
   @include('admin.layouts.footer')
   @include('admin.layouts.scripts')
+
+  @stack('js')
 </body>
 </html>

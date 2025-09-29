@@ -10,14 +10,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
 
-class AdminController extends Controller implements HasMiddleware
+class AdminController extends Controller 
 {
-    public static function middleware(): array
-    {
-        return [
-            new Middleware('perm:admins'),
-        ];
-    }
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('perm:admins'),
+    //     ];
+    // }
 
     public function index()
     {
