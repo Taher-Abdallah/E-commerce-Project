@@ -14,9 +14,9 @@
                                 <li class="breadcrumb-item"><a
                                         href="{{ route('admin.dashboard') }}">{{ __('keywords.dashboard') }}</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{ route('admin.admins.index') }}">admins</a>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.admins.index') }}">{{ __('keywords.admins') }}</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="#">edit admin</a>
+                                <li class="breadcrumb-item active"><a href="#">{{ __('keywords.edit') }}</a>
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title" id="basic-layout-colored-form-control">Create admin</h4>
+                        <h4 class="card-title" id="basic-layout-colored-form-control">{{ __('keywords.create_admin') }}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -46,7 +46,7 @@
                                 {{-- for update validiation --}}
                                 <input name="id" type="hidden" value="{{ $admin->id }}"> 
                                 <div class="form-body">
-                                    <h4 class="form-section"><i class="la la-new"></i>Update  admin</h4>
+                                    <h4 class="form-section"><i class="la la-new"></i>{{ __('keywords.update_admin') }}</h4>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">

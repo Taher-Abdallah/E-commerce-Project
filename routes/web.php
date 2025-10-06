@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\LocationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\LocationController;
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -24,10 +25,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
         //################################# location Module ##################################
         Route::controller(LocationController::class)->middleware('can:global_shipping')->group(function () {
+            //################################# countries Module ##################################
             Route::prefix('countries')->name('countries.')->group(function () {
                 Route::get('/', 'countries')->name('index');
                 Route::get('/{id}/status', 'changeStatus')->name('status');
             });
+            //################################# governorates Module ##################################
             Route::prefix('governorates')->name('governorates.')->group(function () {
                 Route::put('/shipping-price', 'shipping')->name('shipping');
                 Route::get('/{id}/status', 'changeGoverStatus')->name('status');
@@ -35,6 +38,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('countries/{id}/governorate', 'getGovernorateByCountry')->name('governorates.index');
 
         });
+
+        //################################# Category Module ##################################
+        Route::get('categories/get-all', [CategoryController::class, 'getDataTable'])->name('categories.get');
+        Route::resource('categories', CategoryController::class)->middleware('can:categories');
+        //################################# Product Module ##################################
+
 
     });
     require __DIR__ . '/AdminAuth.php';

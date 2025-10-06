@@ -47,7 +47,7 @@
 
             @can('global_shipping')
                 <li class=" nav-item"><a href="#"><i class="la la-ambulance"></i><span class="menu-title"
-                            data-i18n="nav.templates.main"> {{ __('keywords.shipping') }} </span></a>
+                            data-i18n="nav.templates.main"> {{ __('keywords.shippping') }} </span></a>
                     <ul class="menu-content">
                         <li>
                             <a class="menu-item" href="{{ route('admin.countries.index') }}"
