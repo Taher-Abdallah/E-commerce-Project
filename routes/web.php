@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\LocationController;
 
 
@@ -43,10 +44,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //################################# Category Module ##################################
         Route::get('categories/get-all', [CategoryController::class, 'getDataTable'])->name('categories.get');
         Route::resource('categories', CategoryController::class)->middleware('can:categories');
+
         //################################# Brand Module ##################################
         Route::get('brands/get-all', [BrandController::class, 'getDataTable'])->name('brands.get');
         Route::resource('brands', BrandController::class)->middleware('can:brands');
-        //################################# Product Module ##################################
+
+        //################################# Brand Module ##################################
+        Route::get('brands/get-all', [BrandController::class, 'getDataTable'])->name('brands.get');
+        Route::resource('brands', BrandController::class)->middleware('can:brands');
+
+        //################################# coupon Module ##################################
+        Route::get('coupons/get-all', [CouponController::class, 'getDataTable'])->name('coupon.get');
+        Route::resource('coupons', CouponController::class)->middleware('can:coupons');
 
 
     });

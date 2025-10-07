@@ -10,7 +10,6 @@ class CategoryService
  public function getDataTable(){
         $categories = Category::all();
         return DataTables::of($categories)
-            ->addIndexColumn()
             ->addColumn('status', function ($category) {
                 return $category->translateStatus();
             })

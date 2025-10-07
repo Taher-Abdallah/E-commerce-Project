@@ -246,5 +246,8 @@ return[
     'update_admin' => 'تحديث الادمن',
 
     'contacts' => 'اداره التواصل',
+    'limit' => 'الحد الاقصى',
+    'discount_percentage' => 'نسبة الخصم',
+    'used_times' => 'عدد المرات المستخدمة',
 
 ];

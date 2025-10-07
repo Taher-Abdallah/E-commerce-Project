@@ -35,4 +35,28 @@
             enableResumableUpload: false,
         });
     });
-  </script>
+  </script> 
+
+                                                          {{-- sweet alert for Delete --}}
+      <script>
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-delete')) {
+        e.preventDefault(); // يمنع الفورم من الإرسال مباشرة
+        const form = e.target.closest('form');
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit(); // هنا الفورم يبعت الطلب بعد التأكيد
+            }
+        });
+    }
+});
+</script>

@@ -2,7 +2,7 @@
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-                                                            {{-- roles  --}}
+                                                            {{-- categories  --}}
       @can('categories')
                 <li class=" nav-item"><a href="#"><i class="la la-home"></i><span class="menu-title"
                             data-i18n="nav.templates.main">{{ __('keywords.categories') }}</span></a>
@@ -18,6 +18,39 @@
                     </ul>
                 </li>
             @endcan
+
+      @can('brands')
+                <li class=" nav-item"><a href="#"><i class="la la-home"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('keywords.brands') }}</span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.brands.create') }}" data-i18n="">
+                                {{ __('keywords.create_category') }} </a>
+                        </li>
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.brands.index') }}"
+                                data-i18n="">{{ __('keywords.brands') }} </a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+      @can('coupons')
+                <li class=" nav-item"><a href="#"><i class="la la-home"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('keywords.coupons') }}</span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.coupons.create') }}" data-i18n="">
+                                {{ __('keywords.create_category') }} </a>
+                        </li>
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.coupons.index') }}"
+                                data-i18n="">{{ __('keywords.coupons') }} </a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+
+
 
       @can('roles')
                 <li class=" nav-item"><a href="#"><i class="la la-unlock-alt"></i><span class="menu-title"

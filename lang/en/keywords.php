@@ -158,6 +158,9 @@ return[
     'answer_en' => 'Answer English',
     'faqs_table' => 'Faqs Table',
     'system' => 'System',
+    'limit'=> 'Limit',
+    'discount_percentage'=> 'Discount Percentage',
+    'used_times'=> 'Used Times',
 
     'settings' => 'Settings ',
     'edit_settings' => 'Edit Settings',
