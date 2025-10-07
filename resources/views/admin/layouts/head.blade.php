@@ -51,4 +51,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/css/style.css">
   @endif
   <!-- END Custom CSS-->
+
+                                {{-- fileinput --}}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
+  <link rel="stylesheet"  href="{{asset('vendor/file-input/css/fileinput.min.css')}}">
+
 </head>

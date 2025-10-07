@@ -15,7 +15,7 @@ class CategoryService
                 return $category->translateStatus();
             })
             ->addColumn('action', function ($category) {
-                return view('admin.actions.action', compact('category'));
+                return view('admin.categories.actions.action', compact('category'));
             })->make(true);
  }
 

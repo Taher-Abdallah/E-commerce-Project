@@ -40,7 +40,11 @@
               <div class="card">
                 <div class="card-header">
                   <h4 class="card-title">Category Table</h4>
+                  <br>
+
+                  <a href ="{{ route("admin.categories.create") }}" class="btn btn-primary">Create Category</a>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
                       <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -113,6 +117,9 @@
 @endpush
 
 @push('js')
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -138,4 +145,29 @@
             );
         } );
     </script>
+
+<script>
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-delete')) {
+        e.preventDefault(); // يمنع الفورم من الإرسال مباشرة
+        const form = e.target.closest('form');
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit(); // هنا الفورم يبعت الطلب بعد التأكيد
+            }
+        });
+    }
+});
+</script>
+
+
 @endpush

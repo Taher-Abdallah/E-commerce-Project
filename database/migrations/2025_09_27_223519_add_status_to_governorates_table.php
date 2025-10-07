@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('governorates', function (Blueprint $table) {
-            $table->boolean('status')->default(1)->after('name');
+            // $table->boolean('status')->default(1)->after('name');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('governorates', function (Blueprint $table) {
-            //
+            // $table->dropColumn('status');
         });
     }
 };

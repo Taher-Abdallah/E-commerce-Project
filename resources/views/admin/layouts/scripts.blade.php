@@ -17,3 +17,22 @@
   <!-- BEGIN PAGE LEVEL JS-->
   <script src="{{asset('admin-assets')}}/js/scripts/pages/dashboard-ecommerce.js" type="text/javascript"></script>
   <!-- END PAGE LEVEL JS-->
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+                     {{-- file input  --}}
+  <script src="{{ asset('vendor/file-input/js/fileinput.min.js') }}"></script>
+  <script src="{{ asset('vendor/file-input/themes/fa5/theme.min.js') }}"> </script>
+  <script>
+    $(function() {
+        $("#single-image").fileinput({
+            theme: "fa5",
+            allowedFileExtensions: ["jpg", "png", "gif"],
+            allowedFileTypes: ["image"],
+            MaxFileCount: 1,
+            showUpload: false,
+            enableResumableUpload: false,
+        });
+    });
+  </script>
