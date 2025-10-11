@@ -42,6 +42,7 @@
                         <div class="card-body">
                             <form class="form" action="{{ route('admin.faqs.update', $faq->id) }}" enctype="multipart/form-data"  method="POST" files="true') }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="form-body">
                                     <h4 class="form-section"><i class="la la-new"></i>Edit New Faq</h4>
                                     <div class="row">
