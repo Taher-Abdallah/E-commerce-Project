@@ -116,6 +116,13 @@ return[
     'brand_create' => 'Create Brand',
     'table_yajra_paragraph' => 'A dynamic table that displays data from the database with features like search, sorting, column visibility toggle, and options to export to Excel, print, or copy data.',
 
+    'question' => 'Questions',
+    'answer' => 'Answers',
+    'faqs' => 'Faqs',
+    'create_faq' => 'Create Faq',
+    'edit_faq' => 'Edit Faq',
+    'question_ar' => 'Question Arabic',
+    'answer_ar' => 'Answer Arabic',
     'are_you_sure' => ' Are You Sure ?',
     'name_ar' => 'Name Arabic',
     'name_en' => 'Name English',

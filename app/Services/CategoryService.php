@@ -13,6 +13,7 @@ class CategoryService
             ->addColumn('status', function ($category) {
                 return $category->translateStatus();
             })
+            ->addIndexColumn()
             ->addColumn('action', function ($category) {
                 return view('admin.categories.actions.action', compact('category'));
             })->make(true);

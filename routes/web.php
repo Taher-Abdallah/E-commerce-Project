@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\FaqsController;
 use App\Http\Controllers\Admin\LocationController;
 
 
@@ -42,20 +43,34 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
 
         //################################# Category Module ##################################
+        Route::middleware('can:categories')->group(function () {
         Route::get('categories/get-all', [CategoryController::class, 'getDataTable'])->name('categories.get');
-        Route::resource('categories', CategoryController::class)->middleware('can:categories');
+        Route::resource('categories', CategoryController::class);
+        });
 
         //################################# Brand Module ##################################
+        Route::middleware('can:brands')->group(function () {
         Route::get('brands/get-all', [BrandController::class, 'getDataTable'])->name('brands.get');
-        Route::resource('brands', BrandController::class)->middleware('can:brands');
+        Route::resource('brands', BrandController::class);
+        });
 
         //################################# Brand Module ##################################
+        Route::middleware('can:brands')->group(function () {
         Route::get('brands/get-all', [BrandController::class, 'getDataTable'])->name('brands.get');
-        Route::resource('brands', BrandController::class)->middleware('can:brands');
+        Route::resource('brands', BrandController::class);
+        });
 
         //################################# coupon Module ##################################
+        Route::middleware('can:coupons')->group(function () {
         Route::get('coupons/get-all', [CouponController::class, 'getDataTable'])->name('coupon.get');
-        Route::resource('coupons', CouponController::class)->middleware('can:coupons');
+        Route::resource('coupons', CouponController::class);
+        });
+        //################################# Faqs Module ##################################
+        Route::middleware('can:faqs')->group(function () {
+        Route::resource('faqs', FaqsController::class);
+        });
+
+        
 
 
     });

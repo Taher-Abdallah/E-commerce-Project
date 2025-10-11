@@ -4,7 +4,7 @@
 
                                                             {{-- categories  --}}
       @can('categories')
-                <li class=" nav-item"><a href="#"><i class="la la-home"></i><span class="menu-title"
+                <li class=" nav-item"><a href="#"><i class="la la-archive"></i><span class="menu-title"
                             data-i18n="nav.templates.main">{{ __('keywords.categories') }}</span></a>
                     <ul class="menu-content">
                         <li>
@@ -20,7 +20,7 @@
             @endcan
 
       @can('brands')
-                <li class=" nav-item"><a href="#"><i class="la la-home"></i><span class="menu-title"
+                <li class=" nav-item"><a href="#"><i class="la la-tags"></i><span class="menu-title"
                             data-i18n="nav.templates.main">{{ __('keywords.brands') }}</span></a>
                     <ul class="menu-content">
                         <li>
@@ -34,8 +34,9 @@
                     </ul>
                 </li>
             @endcan
+            
       @can('coupons')
-                <li class=" nav-item"><a href="#"><i class="la la-home"></i><span class="menu-title"
+                <li class=" nav-item"><a href="#"><i class="la la-ticket"></i><span class="menu-title"
                             data-i18n="nav.templates.main">{{ __('keywords.coupons') }}</span></a>
                     <ul class="menu-content">
                         <li>
@@ -45,6 +46,22 @@
                         <li>
                             <a class="menu-item" href="{{ route('admin.coupons.index') }}"
                                 data-i18n="">{{ __('keywords.coupons') }} </a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+            
+      @can('faqs')
+                <li class=" nav-item"><a href="#"><i class="la la-question"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('keywords.faqs') }}</span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.faqs.create') }}" data-i18n="">
+                                {{ __('keywords.create_category') }} </a>
+                        </li>
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.faqs.index') }}"
+                                data-i18n="">{{ __('keywords.faqs') }} </a>
                         </li>
                     </ul>
                 </li>
@@ -86,7 +103,7 @@
             @endcan
 
             @can('global_shipping')
-                <li class=" nav-item"><a href="#"><i class="la la-ambulance"></i><span class="menu-title"
+                <li class=" nav-item"><a href="#"><i class="la la-truck"></i><span class="menu-title"
                             data-i18n="nav.templates.main"> {{ __('keywords.shippping') }} </span></a>
                     <ul class="menu-content">
                         <li>

@@ -249,5 +249,8 @@ return[
     'limit' => 'الحد الاقصى',
     'discount_percentage' => 'نسبة الخصم',
     'used_times' => 'عدد المرات المستخدمة',
+    'question' => 'الاسئلة',
+    'answer' => 'الاجوبة',
+    'comments' => 'التعليقات',
 
 ];

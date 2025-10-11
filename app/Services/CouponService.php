@@ -26,6 +26,9 @@ class CouponService
             ->addColumn('action',function ($coupon){
                 return view('admin.coupons.datatables.action',compact('coupon'));
             })
+            ->editColumn('discount_percentage',function ($coupon){
+                return $coupon->discount_percentage.'%';
+            })
             ->editColumn('is_active',function ($coupon){
                 return $coupon->StatusTranslate();
             })
