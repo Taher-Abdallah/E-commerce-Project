@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\FaqsController;
 use App\Http\Controllers\Admin\LocationController;
-
+use App\Http\Controllers\Admin\SettingController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin','admin'])->group(function () {
@@ -68,6 +68,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //################################# Faqs Module ##################################
         Route::middleware('can:faqs')->group(function () {
         Route::resource('faqs', FaqsController::class);
+        });
+        //################################# settings Module ##################################
+        Route::middleware('can:settings')->group(function () {
+        Route::resource('settings', SettingController::class)->only(['show', 'update']);
         });
 
         
