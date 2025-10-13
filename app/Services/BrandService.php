@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class BrandService
 {
 protected $brandRepository;
+
 public function __construct(BrandRepository $brandRepository)
 {
     $this->brandRepository = $brandRepository;

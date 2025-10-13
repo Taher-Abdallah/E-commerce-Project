@@ -114,6 +114,18 @@
                     </ul>
                 </li>
             @endcan
+            @can('settings')
+                <li class=" nav-item"><a href="#"><i class="la la-cog"></i><span class="menu-title"
+                            data-i18n="nav.templates.main"> {{ __('keywords.settings') }} </span></a>
+                    <ul class="menu-content">
+                        <li>
+                            <a class="menu-item" href="{{ route('admin.settings.show',$setting->id) }}"
+                                data-i18n="">{{ __('keywords.settings') }}</a>
+                        </li>
+
+                    </ul>
+                </li>
+            @endcan
            {{-- <x-has-access permission="roles" > --}}
         <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">Templates</span></a>
           <ul class="menu-content">

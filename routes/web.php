@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\FaqsController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CouponController;
-use App\Http\Controllers\Admin\FaqsController;
-use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\LocationController;
+use App\Http\Controllers\Admin\AtrributeController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin','admin'])->group(function () {
@@ -67,15 +68,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
         //################################# Faqs Module ##################################
         Route::middleware('can:faqs')->group(function () {
-        Route::resource('faqs', FaqsController::class);
+            Route::resource('faqs', FaqsController::class);
         });
         //################################# settings Module ##################################
         Route::middleware('can:settings')->group(function () {
-        Route::resource('settings', SettingController::class)->only(['show', 'update']);
+            Route::resource('settings', SettingController::class)->only(['show', 'update']);
         });
-
+        //################################# coupon Module ##################################
+        Route::middleware('can:attributes')->group(function () {
+        Route::get('attributes/get-all', [AtrributeController::class, 'getDataTable'])->name('attributes.get');
+        Route::resource('attributes', AtrributeController::class);
+        });
         
-
+        
+        
 
     });
     require __DIR__ . '/AdminAuth.php';
