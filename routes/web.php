@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\AtrributeController;
+use App\Http\Controllers\Admin\ProductController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin','admin'])->group(function () {
@@ -55,11 +56,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('brands', BrandController::class);
         });
 
-        //################################# Brand Module ##################################
-        Route::middleware('can:brands')->group(function () {
-        Route::get('brands/get-all', [BrandController::class, 'getDataTable'])->name('brands.get');
-        Route::resource('brands', BrandController::class);
-        });
+
 
         //################################# coupon Module ##################################
         Route::middleware('can:coupons')->group(function () {
@@ -79,6 +76,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('attributes/get-all', [AtrributeController::class, 'getDataTable'])->name('attributes.get');
         Route::resource('attributes', AtrributeController::class);
         });
+        //################################# product Module ##################################
+        Route::middleware('can:products')->group(function () {
+        Route::get('products/get-all', [ProductController::class, 'getDataTable'])->name('products.get');
+        Route::post('/products/image/{id}', [ProductController::class, 'deleteImage'])->name('products.delete-image');
+        Route::resource('products', ProductController::class);
+        });
         
         
         
@@ -87,15 +90,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     require __DIR__ . '/AdminAuth.php';
 });
 
-
-
-//============================================================================ Role Resource
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 

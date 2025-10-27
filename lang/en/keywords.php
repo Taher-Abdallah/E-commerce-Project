@@ -62,6 +62,11 @@ return[
     'delete_permission' => 'Delete Permission',
     'permission_name' => 'Permission Name',
     'permission_description' => 'Permission Description',
+    'small_desc'=>'Small Description',
+    'available_in_stock'=>'Available In Stock',
+    'desc'=>'Description',
+    'available'=>'available',
+    'not_available'=>'Not available',
 
     'success_msg' => 'Operation Done Successfuly',
     'error_msg' => 'Operation Failed',

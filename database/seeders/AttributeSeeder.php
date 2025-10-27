@@ -50,6 +50,18 @@ class AttributeSeeder extends Seeder
             [
                 'value' => 'Blue',
             ],
+            [
+                'value' => 'Yellow',
+            ],
+            [
+                'value' => 'Orange',
+            ],
+            [
+                'value' => 'Black',
+            ],
+            [
+                'value' => 'White',
+            ],
         ]);
     }
 }

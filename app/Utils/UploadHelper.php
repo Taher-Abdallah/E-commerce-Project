@@ -19,6 +19,22 @@ class UploadHelper
         return null;
     }
 
+    public static function uploadMultiple($request, $fieldName, $folder)
+    {
+        $fileNames = [];
+
+        if ($request->hasFile($fieldName)) {
+            foreach ($request->file($fieldName) as $file) {
+                $path = Storage::disk('public')->putFile($folder, $file);
+                $fileNames[] = basename($path);
+            }
+        }
+
+        return $fileNames;
+    }
+
+
+
     /**
      * حذف ملف موجود
      */

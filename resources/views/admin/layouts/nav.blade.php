@@ -1,3 +1,4 @@
+use Illuminate\Support\Facades\Auth;
   <nav
       class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-dark navbar-shadow">
       <div class="navbar-wrapper">
@@ -212,7 +213,7 @@
                           <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
                               data-toggle="dropdown">
                               <span class="mr-1">Hello,
-                                  <span class="user-name text-bold-700">John Doe</span>
+                                  <span class="user-name text-bold-700">{{ Auth::guard('admin')->user()->name }}</span>
                               </span>
                               <span class="avatar avatar-online">
                                   <img src="{{ asset('admin-assets') }}/images/portrait/small/avatar-s-19.png"

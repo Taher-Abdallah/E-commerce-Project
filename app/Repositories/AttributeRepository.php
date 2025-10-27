@@ -31,7 +31,6 @@ class AttributeRepository
     {
             $attribute = Attribute::create($data);
             return $attribute; 
-        // $attribute = Attribute::create($data);
     }
 
     public function storeAttributeValue($attribute,$value)

@@ -6,7 +6,7 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-9 mb-2 breadcrumb-new">
-                    <h3 class="content-header-title mb-0 d-inline-block">{{ __('keywords.governorates_table') }}</h3>
+                    <h3 class="content-header-title mb-0 d-inline-block">{{ __('keywords.coupons') }}</h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
@@ -46,7 +46,6 @@
                             <div class="card-content">
                                 <div class="card-body">
 
-                                    <p class="card-text">{{ __('keywords.form_edit') }}.</p>
                                     <form class="form" action="{{ route('admin.coupons.store') }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf

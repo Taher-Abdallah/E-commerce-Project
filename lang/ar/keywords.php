@@ -255,5 +255,8 @@ return[
     'question' => 'الاسئلة',
     'answer' => 'الاجوبة',
     'comments' => 'التعليقات',
+    'small_desc'=>'وصف صغير',
+    'available_in_stock'=>'متوفر في المخزون',
+    'desc'=>'وصف كبير',
 
 ];

@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductTag extends Model
 {
-    //
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_tags');
+    }
 }
