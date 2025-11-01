@@ -77,6 +77,7 @@
 <link rel="stylesheet" href="{{ asset('vendor/file-input/css/fileinput.min.css') }}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
 
-{{-- end file input --}}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.5.3/css/fileinput.min.css" rel="stylesheet" />
 
 </head>

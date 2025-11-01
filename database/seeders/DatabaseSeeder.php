@@ -5,8 +5,11 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Admin;
+use App\Models\Faq;
+use Attribute;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
+use PHPUnit\Framework\Constraint\Count;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,7 +23,15 @@ class DatabaseSeeder extends Seeder
          $this->call([
             
              RoleSeeder::class,
-            AdminSeeder::class,
+             AdminSeeder::class,
+            FaqSeeder::class,
+            AttributeSeeder::class,
+            BrandSeeder::class,
+            CategorySeeder::class,
+            CountrySeeder::class,
+
+
+
         ]);
     }
 }

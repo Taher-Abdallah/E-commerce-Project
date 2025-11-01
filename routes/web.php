@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\AtrributeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin','admin'])->group(function () {
@@ -82,7 +83,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/products/image/{id}', [ProductController::class, 'deleteImage'])->name('products.delete-image');
         Route::resource('products', ProductController::class);
         });
-        
+
+        //################################# Users Module ##################################
+        Route::middleware('can:users')->group(function () {
+            Route::get('users/get-all', [UserController::class, 'getDataTable'])->name('users.get');
+            Route::resource('users', UserController::class);
+        });        
         
         
 

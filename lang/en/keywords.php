@@ -67,6 +67,8 @@ return[
     'desc'=>'Description',
     'available'=>'available',
     'not_available'=>'Not available',
+    'select_status'=>'Select Status',
+    'search_city'=>'Search City',
 
     'success_msg' => 'Operation Done Successfuly',
     'error_msg' => 'Operation Failed',
@@ -344,6 +346,7 @@ return[
     'product_quantity' => 'Quantity',
     'product_attributes' => 'Attributes',
     'small_description' => 'Small Description',
+    'leave_empty_to_keep'=> 'Leave Empty to keep ',
 
     'mark_as_delivered' => 'Mark As Delivered',
     'delete_order' => 'Delete Order',

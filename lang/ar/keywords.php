@@ -259,4 +259,7 @@ return[
     'available_in_stock'=>'متوفر في المخزون',
     'desc'=>'وصف كبير',
 
+    'select_status'=>'اختر الحالة',
+    'search_city'=>'بحث بالمدينة',
+    'leave_empty_to_keep'=>'اتركها فارغه في حاله عدم التغيير',
 ];

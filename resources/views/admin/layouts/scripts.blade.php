@@ -59,6 +59,7 @@
     });
   </script> --}}
 
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
                                       {{-- تحميل عده صور --}}
@@ -103,7 +104,6 @@ document.addEventListener('click', function (e) {
     }
 });
 </script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.5.3/css/fileinput.min.css" rel="stylesheet" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.5.3/js/plugins/piexif.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.5.3/js/plugins/sortable.min.js"></script>
