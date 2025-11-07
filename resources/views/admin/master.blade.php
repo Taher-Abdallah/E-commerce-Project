@@ -2,16 +2,14 @@
 <html class="loading" lang="en" data-textdirection="rtl">
 @include('admin.layouts.head')
 @stack('css')
-<body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
+<body class="vertical-layout vertical-menu-modern 2-columns  menu-expanded fixed-navbar"
 data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
   <!-- fixed-top-->
   @include('admin.layouts.nav')
   <!-- ////////////////////////////////////////////////////////////////////////////-->
   @include('admin.layouts.sidebar')
   @yield('content')
-
   <!-- ////////////////////////////////////////////////////////////////////////////-->
- 
   @include('admin.layouts.footer')
   @include('admin.layouts.scripts')
 

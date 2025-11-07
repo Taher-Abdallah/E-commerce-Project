@@ -36,6 +36,7 @@
               @endcan
 
 
+              {{-- brand managment --}}
               @can('brands')
                   <li class=" nav-item"><a href="#"><i class="la la-tags"></i><span class="menu-title"
                               data-i18n="nav.templates.main">{{ __('keywords.brands') }}</span></a>
@@ -47,6 +48,23 @@
                           <li>
                               <a class="menu-item" href="{{ route('admin.brands.index') }}"
                                   data-i18n="">{{ __('keywords.brands') }} </a>
+                          </li>
+                      </ul>
+                  </li>
+              @endcan
+
+              {{-- user managment --}}
+              @can('users')
+                  <li class=" nav-item"><a href="#"><i class="la la-user"></i><span class="menu-title"
+                              data-i18n="nav.templates.main">{{ __('keywords.users') }}</span></a>
+                      <ul class="menu-content">
+                          <li>
+                              <a class="menu-item" href="{{ route('admin.users.create') }}" data-i18n="">
+                                  {{ __('keywords.create_user') }} </a>
+                          </li>
+                          <li>
+                              <a class="menu-item" href="{{ route('admin.users.index') }}"
+                                  data-i18n="">{{ __('keywords.users') }} </a>
                           </li>
                       </ul>
                   </li>
@@ -132,6 +150,7 @@
                       </ul>
                   </li>
               @endcan
+
               @can('settings')
                   <li class=" nav-item"><a href="#"><i class="la la-cog"></i><span class="menu-title"
                               data-i18n="nav.templates.main"> {{ __('keywords.settings') }} </span></a>
@@ -139,6 +158,19 @@
                           <li>
                               <a class="menu-item" href="{{ route('admin.settings.show', $setting->id) }}"
                                   data-i18n="">{{ __('keywords.settings') }}</a>
+                          </li>
+
+                      </ul>
+                  </li>
+              @endcan
+
+              @can('contacts')
+                                    <li class=" nav-item"><a href="#"><i class="la la-envelope"></i><span class="menu-title"
+                              data-i18n="nav.templates.main"> {{ __('keywords.contacts') }} </span></a>
+                      <ul class="menu-content">
+                          <li>
+                              <a class="menu-item" href="{{ route('admin.contacts.index') }}"
+                                  data-i18n="">{{ __('keywords.contacts') }}</a>
                           </li>
 
                       </ul>

@@ -80,4 +80,22 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.5.3/css/fileinput.min.css" rel="stylesheet" />
 
+  <!-- BEGIN VENDOR CSS-->
+  <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/css/vendors.css">
+  <!-- END VENDOR CSS-->
+  <!-- BEGIN MODERN CSS-->
+  <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/css/app.css">
+  <!-- END MODERN CSS-->
+  <!-- BEGIN Page Level CSS-->
+  <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/css/core/menu/menu-types/vertical-menu-modern.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/fonts/simple-line-icons/style.min.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('admin-assets')}}/css/pages/email-application.css">
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+  <!-- END Custom CSS-->
+
+  @livewireStyles
+
 </head>

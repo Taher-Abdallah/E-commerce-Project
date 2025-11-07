@@ -30,5 +30,6 @@ return [
     'contacts'=>'Manage Contacts',
     'sliders'=>'Manage Slider',
     'pages'=>'Manage Pages',
+    'contacts'=>'Manage Contacts',
 
 ];

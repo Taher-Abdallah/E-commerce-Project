@@ -258,6 +258,8 @@ return[
     'small_desc'=>'وصف صغير',
     'available_in_stock'=>'متوفر في المخزون',
     'desc'=>'وصف كبير',
+    'create_user'=>'انشاء مستخدم',
+    'replay_contact'=>'الرد على التواصل',
 
     'select_status'=>'اختر الحالة',
     'search_city'=>'بحث بالمدينة',

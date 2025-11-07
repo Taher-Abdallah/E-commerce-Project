@@ -1,19 +1,21 @@
 <?php
 
+use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\FaqsController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\AtrributeController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin','admin'])->group(function () {
@@ -88,10 +90,19 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::middleware('can:users')->group(function () {
             Route::get('users/get-all', [UserController::class, 'getDataTable'])->name('users.get');
             Route::resource('users', UserController::class);
-        });        
+        }); 
+        //=================================== Contacts Module ==================================================
+        Route::middleware('can:contacts')->group(function () {
+            Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
+        });
         
         
 
+    });
+
+    // LiveWire
+    Livewire::setUpdateRoute(function ($page) {
+        return Route::post('livewire/update', $page)->name('livewire.update');
     });
     require __DIR__ . '/AdminAuth.php';
 });

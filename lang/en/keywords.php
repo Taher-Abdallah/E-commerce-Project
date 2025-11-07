@@ -347,6 +347,8 @@ return[
     'product_attributes' => 'Attributes',
     'small_description' => 'Small Description',
     'leave_empty_to_keep'=> 'Leave Empty to keep ',
+    'create_user' => 'Create User',
+    'replay_contact' => 'Replay Contact',
 
     'mark_as_delivered' => 'Mark As Delivered',
     'delete_order' => 'Delete Order',
