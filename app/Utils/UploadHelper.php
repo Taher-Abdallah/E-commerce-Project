@@ -51,16 +51,18 @@ class UploadHelper
     public static function update($model, $request, $fieldName, $folder)
     {
         if ($request->hasFile($fieldName)) {
-            // حذف القديم لو موجود
-            if ($model->$fieldName) {
-                self::delete($folder, $model->$fieldName);
+            $oldFile = $model->getRawOriginal($fieldName);
+            if ($oldFile) {
+                self::delete($folder, $oldFile);
             }
 
-            // رفع الجديد
-            $newFile = self::upload($request, $fieldName, $folder);
+            $file = $request->file($fieldName);
+            $newName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs($folder, $newName, 'public');
 
-            // تحديث الموديل
-            $model->$fieldName = $newFile;
+            return $newName; // ✅ نرجّع الاسم الجديد
         }
+
+        return $model->getRawOriginal($fieldName);
     }
 }

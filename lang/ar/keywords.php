@@ -260,6 +260,7 @@ return[
     'desc'=>'وصف كبير',
     'create_user'=>'انشاء مستخدم',
     'replay_contact'=>'الرد على التواصل',
+    'file_name'=>'اسم الملف',
 
     'select_status'=>'اختر الحالة',
     'search_city'=>'بحث بالمدينة',

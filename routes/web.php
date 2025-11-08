@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
@@ -92,11 +93,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('users/get-all', [UserController::class, 'getDataTable'])->name('users.get');
             Route::resource('users', UserController::class);
         }); 
-        //=================================== Contacts Module ==================================================
+        //################################## Contacts Module ##################################
         Route::middleware('can:contacts')->group(function () {
             Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
         });
         
+        //################################# Sliders Module ##################################
+        Route::middleware('can:sliders')->group(function () {
+            Route::get('sliders/get-all', [SliderController::class, 'getDataTable'])->name('sliders.get');
+            Route::resource('sliders', SliderController::class);
+        }); 
         
 
     });

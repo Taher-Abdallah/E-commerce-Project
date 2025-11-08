@@ -272,6 +272,7 @@ return[
     'num_of_orders' => 'Num Of Orders',
     'email_verified_at' => 'Email Verified At',
     'contacts' => 'Email Application',
+    'file_name'=>'File Name',
 
     'remember_me' => 'Remember Me',
     'forget_password' => 'Forget Password',
