@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\AtrributeController;
 
+//admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware(['auth:admin','admin'])->group(function () {
         //################################### middleware admin for the admins inactive  ##############################
@@ -110,4 +111,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 
-require __DIR__.'/auth.php';

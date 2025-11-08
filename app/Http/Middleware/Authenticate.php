@@ -32,7 +32,7 @@ class Authenticate
             }
 
             if ($guard == 'web') {
-                return redirect()->route('login');
+                return redirect()->route('user.login');
             }
         }
 
