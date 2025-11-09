@@ -16,6 +16,7 @@ class CategorySeeder extends Seeder
         Category::UpdateOrCreate([
             'name' => 'Electronics Phone',
             'status' => 1
+            
         ]);
 
     }

@@ -58,8 +58,9 @@
                         <tr>
                           <th>#</th>
                           <th>Name</th>
-                          <th>Slug</th>
+                          <th>icon</th>
                           <th>Status</th>
+                          <th>Products Count</th>
                           <th>Created_at</th>
                           <th>Actions</th>
                         </tr>
@@ -70,7 +71,7 @@
                             <td>{{ $categories->firstItem()+ $loop->index }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
-                            <td>{{ $category->status }}</td>
+                            <td>{{ $category->icon }}</td>
                             <td>{{ $category->created_at->diffForHumans() }}</td>
 
                             <td>
@@ -88,8 +89,9 @@
                         <tr>
                           <th>#</th>
                           <th>Name</th>
-                          <th>Slug</th>
+                          <th>icon</th>
                           <th>Status</th>
+                          <th>Products Count</th>
                           <th>Created_at</th>
                           <th>Actions</th>
                         </tr>
@@ -125,8 +127,9 @@
 
                 {data: 'DT_RowIndex' },
                 {data: 'name', },
-                  {data: 'slug',},
+                  {data: 'icon',},
                   {data: 'status', },
+                  {data: 'products_count', },
                   {data: 'created_at', },
                   {data: 'action',searchable: false, orderable: false},
               ],
