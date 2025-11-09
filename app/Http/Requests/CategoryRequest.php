@@ -25,6 +25,7 @@ class CategoryRequest extends FormRequest
             'name' => 'required|unique:categories,name,' . $this->id,
             'status' => 'required|in:0,1',
             'parent' => 'nullable|exists:categories,id',
+            'icon' => 'nullable|max:2048',
         ];
     }
 }

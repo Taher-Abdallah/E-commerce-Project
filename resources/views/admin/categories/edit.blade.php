@@ -56,9 +56,9 @@
 
                                         <div class="form-body">
                                             <div class="form-group">
-                                                <label for="eventRegInput1">{{ __('keywords.name_en') }}</label>
+                                                <label for="eventRegInput1">{{ __('keywords.name') }}</label>
                                                 <input type="text" value="{{ $category->name }}" class="form-control"
-                                                    placeholder="{{ __('keywords.name_en') }}" name="name">
+                                                    placeholder="{{ __('keywords.name') }}" name="name">
                                                     <x-error-validate field="name" />
                                             </div>
 
@@ -71,6 +71,13 @@
                                                     @endforeach
                                                 </select>
                                                 <x-error-validate field="parent" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="eventRegInput1">{{ __('keywords.icon') }}</label>
+                                                <input type="file" value="{{ old('icon')}}" class="form-control" id="single-image-edit"
+                                                    placeholder="{{ __('keywords.icon') }}" name="icon">
+                                                    <x-error-validate field="icon" />
                                             </div>
 
 
@@ -111,5 +118,20 @@
 
 @endsection
 @push('js')
-
+  <script>
+    $(function() {
+        $("#single-image-edit").fileinput({
+            theme: "fa5",
+            allowedFileExtensions: ["jpg", "png", "gif"],
+            allowedFileTypes: ["image"],
+            MaxFileCount: 1,
+            showUpload: false,
+            enableResumableUpload: false,
+            initialPreviewAsData: true,
+            initialPreview: [
+                "{{ asset('storage/categories/' . $category->icon) }}"
+            ],
+        });
+    });
+  </script>
 @endpush

@@ -47,7 +47,8 @@
                                 <div class="card-body">
 
                                     <p class="card-text">{{ __('keywords.form_edit') }}.</p>
-                                    <form class="form" action="{{ route('admin.categories.store')}}" method="POST" enctype="multipart/form-data" >
+                                    <form class="form" action="{{ route('admin.categories.store')}}" method="POST" 
+                                    enctype="multipart/form-data" >
                                         @csrf
 
                                         <div class="form-body">
@@ -67,6 +68,13 @@
                                                     @endforeach
                                                 </select>
                                                 <x-error-validate field="parent" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="eventRegInput1">{{ __('keywords.icon') }}</label>
+                                                <input type="file" value="{{ old('icon')}}" class="form-control" id="single-image"
+                                                    placeholder="{{ __('keywords.icon') }}" name="icon">
+                                                    <x-error-validate field="icon" />
                                             </div>
 
  

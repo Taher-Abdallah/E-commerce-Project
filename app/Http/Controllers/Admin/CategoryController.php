@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
+use App\Repositories\CategoryRepository;
 use App\Services\CategoryService;
+use App\Utils\UploadHelper;
 
 class CategoryController extends Controller
 {
-    protected $categoryService;
-    public function __construct(CategoryService $categoryService)
+    protected $categoryService,$categoryRepository;
+    public function __construct(CategoryService $categoryService , CategoryRepository $categoryRepository)
     {
         $this->categoryService = $categoryService;
+        $this->categoryRepository = $categoryRepository;
     }
 
     public function index()
@@ -23,7 +26,7 @@ class CategoryController extends Controller
     }
 
     public function getDataTable(){
-        return $this->categoryService->getDataTable();
+        return $this->categoryRepository->getDataTable();
     }
 
 
@@ -36,7 +39,7 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request)
     {
-        Category::create($request->validated());
+        $this->categoryService->storeCategory($request);
         return redirect()->route('admin.categories.index')->with('success', 'Category created successfully');
     }
 
@@ -51,14 +54,14 @@ class CategoryController extends Controller
 
     public function update(CategoryRequest $request, string $id)
     {
-        $category = Category::find($id);
-        $category->update($request->validated());
+
+        $this->categoryService->updateCategory($request, $id);
         return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully');
     }
 
     public function destroy(string $id)
     {
-       Category::find($id)->delete();
+        $this->categoryService->deleteCategory($id);
         return redirect()->route('admin.categories.index')->with('success', 'Category deleted successfully');
     }
 }

@@ -273,6 +273,7 @@ return[
     'email_verified_at' => 'Email Verified At',
     'contacts' => 'Email Application',
     'file_name'=>'File Name',
+    'select_parent'=>'Select Parent',
 
     'remember_me' => 'Remember Me',
     'forget_password' => 'Forget Password',
