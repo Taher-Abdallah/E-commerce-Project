@@ -151,6 +151,23 @@
                   </li>
               @endcan
 
+              @can('sliders')
+                  <li class=" nav-item"><a href="#"><i class="la la-image"></i><span class="menu-title"
+                              data-i18n="nav.templates.main"> {{ __('keywords.sliders') }} </span></a>
+                      <ul class="menu-content">
+                          <li>
+                              <a class="menu-item" href="{{ route('admin.sliders.create') }}"
+                                  data-i18n="">{{ __('keywords.create_slider') }} </a>
+                          </li>
+                          <li>
+                              <a class="menu-item" href="{{ route('admin.sliders.index') }}"
+                                  data-i18n="">{{ __('keywords.sliders') }}</a>
+                          </li>
+                      </ul>
+                  </li>
+              @endcan
+
+
               @can('settings')
                   <li class=" nav-item"><a href="#"><i class="la la-cog"></i><span class="menu-title"
                               data-i18n="nav.templates.main"> {{ __('keywords.settings') }} </span></a>
