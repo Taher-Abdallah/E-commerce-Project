@@ -1,0 +1,1 @@
+<img src="{{ asset('storage/categories/' . $category->icon) }}" width="100px" height="100px">
