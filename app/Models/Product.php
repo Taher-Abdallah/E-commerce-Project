@@ -2,10 +2,33 @@
 
 namespace App\Models;
 
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\ProductTag;
+use App\Models\ProductImage;
+use Spatie\Sluggable\HasSlug;
+use App\Models\ProductPreview;
+use App\Models\ProductVariant;
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use HasSlug;
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
+    }
+
+
+
     public function brand()
     {
         return $this->belongsTo(Brand::class);

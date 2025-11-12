@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Users')
+@section('title', 'Faqs Questions')
 @section('content')
 
     <div class="app-content content">
@@ -65,11 +65,10 @@
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>User Name</th>
+                                                    <th>Name</th>
                                                     <th>Email</th>
-                                                    <th>Status</th>
-                                                    <th>Governerate</th>
-                                                    <th>city</th>
+                                                    <th>Subject</th>
+                                                    <th>Message</th>
                                                     <th>Created_at</th>
                                                     <th>Actions</th>
                                                 </tr>
@@ -81,11 +80,10 @@
                                                 <tr>
 
                                                     <th>#</th>
-                                                    <th>User Name</th>
+                                                    <th>Name</th>
                                                     <th>Email</th>
-                                                    <th>Status</th>
-                                                    <th>Governerate</th>
-                                                    <th>city</th>
+                                                    <th>Subject</th>
+                                                    <th>Message</th>
                                                     <th>Created_at</th>
                                                     <th>Actions</th>
                                                 </tr>
@@ -129,7 +127,7 @@
 
                     }
                 },
-                ajax: "{{ route('admin.users.get') }}",
+                ajax: "{{ route('admin.faq-questions.get') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex',
@@ -145,16 +143,12 @@
                         name: 'email'
                     },
                     {
-                        data: 'status',
-                        name: 'status'
+                        data: 'subject',
+                        name: 'subject'
                     },
                     {
-                        data: 'governorate_id',
-                        name: 'governorate_id'
-                    },
-                    {
-                        data: 'city_id',
-                        name: 'city_id'
+                        data: 'message',
+                        name: 'message'
                     },
                     {
                         data: 'created_at',

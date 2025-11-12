@@ -274,6 +274,7 @@ return[
     'contacts' => 'Email Application',
     'file_name'=>'File Name',
     'select_parent'=>'Select Parent',
+    'faq-questions'=>'FAQ Questions',
 
     'remember_me' => 'Remember Me',
     'forget_password' => 'Forget Password',

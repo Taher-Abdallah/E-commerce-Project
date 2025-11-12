@@ -95,9 +95,15 @@
                               <a class="menu-item" href="{{ route('admin.faqs.create') }}" data-i18n="">
                                   {{ __('keywords.create_faq') }} </a>
                           </li>
+
                           <li>
                               <a class="menu-item" href="{{ route('admin.faqs.index') }}"
                                   data-i18n="">{{ __('keywords.faqs') }} </a>
+                          </li>
+
+                          <li>
+                              <a class="menu-item" href="{{ route('admin.faq-questions.index') }}"
+                                  data-i18n="">{{ __('keywords.faq-questions') }} </a>
                           </li>
                       </ul>
                   </li>

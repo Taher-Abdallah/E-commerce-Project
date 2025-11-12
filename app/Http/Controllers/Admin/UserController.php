@@ -22,6 +22,12 @@ class UserController extends Controller
         ->addColumn(('status'),function ($user){
             return $user->status==1 ? 'Active' : 'Inactive';
         })
+        ->addColumn('governorate_id', function ($user) {
+            return $user->governorate ? $user->governorate->name : 'N/A';
+        })
+        ->addColumn('city_id', function ($user) {
+            return $user->city ? $user->city->name : 'N/A';
+        })
         ->addColumn('created_at',function ($user){
             return $user->created_at->diffForHumans();
         })

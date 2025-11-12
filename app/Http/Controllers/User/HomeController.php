@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -17,5 +18,20 @@ class HomeController extends Controller
     public function profile()
     {
         return view('user.user-dashboard');
+    }
+
+    public function faqs()
+    {
+        $faqs=Faq::limit(5)->get();
+        return view('user.faq',get_defined_vars());
+    }
+
+    public function terms()
+    {
+        return view('user.terms');
+    }
+    public function privacy()
+    {
+        return view('user.privacy');
     }
 }

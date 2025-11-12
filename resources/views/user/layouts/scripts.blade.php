@@ -9,3 +9,6 @@
     <script src="{{ asset('user-assets') }}/assets/js/swiper10-bundle.min.js"></script>
 
     <script src="{{ asset('user-assets') }}/assets/js/shopus.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+       @livewireScripts  {{-- لو بتستخدم livewire --}}

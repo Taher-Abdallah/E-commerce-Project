@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\AtrributeController;
+use App\Http\Controllers\Admin\FaqQuestionController;
+use App\Livewire\User\FaqQuestions;
 
 //admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -80,6 +82,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::middleware('can:attributes')->group(function () {
         Route::get('attributes/get-all', [AtrributeController::class, 'getDataTable'])->name('attributes.get');
         Route::resource('attributes', AtrributeController::class);
+        });
+        //################################# faq-Ques Module ##################################
+        Route::middleware('can:faqs')->group(function () {
+        Route::get('faq-questions/get-all', [FaqQuestionController::class, 'getDataTable'])->name('faq-questions.get');
+        Route::resource('faq-questions', FaqQuestionController::class);
         });
         //################################# product Module ##################################
         Route::middleware('can:products')->group(function () {

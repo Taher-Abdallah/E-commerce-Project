@@ -33,11 +33,16 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function governorate()
+    {
+        return $this->belongsTo(Governorate::class);
+    }
     protected function casts(): array
     {
         return [

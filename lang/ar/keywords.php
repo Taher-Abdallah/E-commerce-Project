@@ -254,6 +254,7 @@ return[
     'used_times' => 'عدد المرات المستخدمة',
     'question' => 'الاسئلة',
     'answer' => 'الاجوبة',
+    'faq_questions' => 'اسئلة المتابعين',
     'comments' => 'التعليقات',
     'small_desc'=>'وصف صغير',
     'available_in_stock'=>'متوفر في المخزون',
