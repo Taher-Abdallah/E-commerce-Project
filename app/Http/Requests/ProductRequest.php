@@ -45,7 +45,7 @@ class ProductRequest extends FormRequest
             'views' => 'nullable|integer',
             'brand_id' => 'required|exists:brands,id',
             'category_id' => 'required|exists:categories,id',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
+            'images.*' => 'nullable|image|max:10240',
             'images' => 'nullable|array',
 
             'variants' => 'required_if:has_variants,1|array',

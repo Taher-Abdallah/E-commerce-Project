@@ -27,7 +27,18 @@ class Product extends Model
             ->saveSlugsTo('slug');
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
 
+    public function getPriceAfterDiscount()
+    {
+        if ($this->discount) {
+            return $this->price - $this->discount;
+        }
+        return $this->price;
+    }
 
     public function brand()
     {

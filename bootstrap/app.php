@@ -47,7 +47,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\AdminAuthinticate::class,
             // 'auth' => \App\Http\Middleware\Authenticate::class,
             // 'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-            // 'perm' => \App\Http\Middleware\CheckPermession::class
+            'perm' => \App\Http\Middleware\CheckPermession::class
 
         ]);
     })

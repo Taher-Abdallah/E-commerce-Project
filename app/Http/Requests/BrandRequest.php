@@ -27,9 +27,9 @@ class BrandRequest extends FormRequest
         ];
 
         if ($this->isMethod('post')) {
-            $data['logo'] = ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'];
+            $data['logo'] = ['required', 'image',  'max:2048'];
         } elseif ($this->isMethod('put') || $this->isMethod('patch')) {
-            $data['logo'] = ['sometimes', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'];
+            $data['logo'] = ['sometimes', 'image',  'max:2048'];
         }
         return $data;
     }

@@ -114,8 +114,7 @@
 
                                                 <td>
                                                     <div id="price_{{ $gov->id }}" class="">
-                                                        {{ $gov->shippingPrice->price }} 
-                                                    
+                                                     {{ optional($gov->shippingPrice)->price ?? '0' }}                                                    
                                                     </div>
                                                 </td>
 

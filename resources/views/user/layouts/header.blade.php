@@ -952,7 +952,7 @@
                     <div class="header-nav-menu">
                         <ul class="menu-list">
                             <li>
-                                <a href="index-2.html">
+                                <a href="{{ route('user.index') }}">
                                     <span class="list-text">Home</span>
                                 </a>
                             </li>

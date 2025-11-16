@@ -23,7 +23,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="">{{__('keywords.shipping_price') }}</label>
-                        <input type="number" name="price" class="form-control" value="{{ $gov->shippingPrice->price }}" >
+                        <input type="number" name="price" class="form-control" value="{{ $gov->shippingPrice->price ?? '' }}" >
                         <input type="hidden" name="gov_id" class="form-control" value="{{ $gov->id }}" >
                     </div>
                 </div>
