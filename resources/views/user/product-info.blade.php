@@ -53,7 +53,7 @@
                             @livewire('user.product-details', ['product' => $product])
 
                             <div class="product-quantity">
-                            @livewire('user.wishlist', ['product' => $product])
+                            @livewire('user.wishlist.wishlist', ['product' => $product])
 
                                 <div class="quantity-wrapper">
 

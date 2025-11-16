@@ -47,6 +47,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Governorate::class);
     }
+
+    public function wishlists(){
+        return $this->hasMany(Wishlist::class);
+    }
     protected function casts(): array
     {
         return [

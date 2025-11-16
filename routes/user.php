@@ -1,13 +1,14 @@
 <?php
 
+use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\ProductController;
+use App\Http\Controllers\User\WishlistController;
 
 Route::name('user.')->group(function () {
-Route::view('/cars', 'user.car')->name('cars');
-Route::view('/cars-shop', 'user.cars-shop')->name('carss');
+
     Route::controller(HomeController::class)->group(function () {
         Route::get('/profile', 'profile')->middleware('auth')->name('profile');
         Route::get('/', 'index')->name('index');
@@ -31,9 +32,15 @@ Route::view('/cars-shop', 'user.cars-shop')->name('carss');
         Route::get('/related-items/{slug}', 'getRelatedItems')->name('related.items');
     });
 
-    
+    Route::middleware('auth:web')->group(function () {
+        Route::get('/wishlist', WishlistController::class)->name('wishlist');
+        
+    });
 
-
+        // LiveWire
+        Livewire::setUpdateRoute(function ($page) {
+            return Route::post('livewire/update', $page)->name('livewire.update');
+        });
     
     require __DIR__ . '/auth.php';
 });
