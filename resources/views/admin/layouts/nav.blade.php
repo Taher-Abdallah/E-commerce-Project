@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\Auth;
                   <li class="nav-item mr-auto">
                       <a class="navbar-brand" href="index.html">
                           <img class="brand-logo" alt="modern admin logo"
-                              src="{{ asset('admin-assets') }}/images/logo/logo.png">
-                          <h3 class="brand-text">Modern Admin</h3>
+                              src="{{ asset('admin-assets/images/careative.png') }}" >
+                          <h3 class="brand-text">Careaitve Admin</h3>
                       </a>
                   </li>
-                  <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0"
+                  {{-- <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0"
                           data-toggle="collapse"><i class="toggle-icon ft-toggle-right font-medium-3 white"
                               data-ticon="ft-toggle-right"></i></a></li>
                   <li class="nav-item d-md-none">
                       <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i
                               class="la la-ellipsis-v"></i></a>
-                  </li>
+                  </li> --}}
               </ul>
           </div>
           <div class="navbar-container content">

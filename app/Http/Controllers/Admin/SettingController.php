@@ -23,10 +23,8 @@ class SettingController extends Controller
     {
         $setting = Setting::findOrFail($id);
         $data=$request->validated();
-        UploadHelper::update($setting, $request, 'logo', 'settings/logo');
-        UploadHelper::update($setting, $request, 'favicon', 'settings/favicon');
-        $data['logo'] = $setting->logo;
-        $data['favicon'] = $setting->favicon;
+        $data['logo'] = UploadHelper::update($setting, $request, 'logo', 'settings/logo');
+        $data['favicon'] = UploadHelper::update($setting, $request, 'favicon', 'settings/favicon');
         $setting->update($data);
         return redirect()->back()->with('success', 'Setting updated successfully');
     }

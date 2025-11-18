@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\City;
+use App\Models\Country;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,11 +25,14 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $city=City::inRandomOrder()->first();
+        $country=Country::first();
+        $governerate=$country->governorates()->inRandomOrder()->first();
+        $city=$governerate->cities()->inRandomOrder()->first()->id;
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'phone' => fake()->phoneNumber(),
+            'country_id'=>$country->id,
+            'governorate_id'=>$governerate->id,
             'city_id'=>$city,
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('12345678'),

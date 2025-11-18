@@ -12,3 +12,27 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
        @livewireScripts  {{-- لو بتستخدم livewire --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+       // SweetAlert Delete Confirmation
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('btn-delete')) {
+            e.preventDefault();
+            const form = e.target.closest('form');
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        }
+    });
+</script>

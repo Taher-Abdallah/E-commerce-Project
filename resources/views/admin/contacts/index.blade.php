@@ -16,8 +16,6 @@ data-open="click" data-menu="vertical-menu-modern" data-col="content-left-sideba
       </div>
     </div>
   <livewire:admin.contact.replay-contact />
-
-
     {{-- contact show --}}
     @livewire('admin.contact.contact-show')
   </div>

@@ -14,13 +14,16 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'John Doe',
-            'email' => 'taher@gmail.com',
-            'password' => bcrypt('password'),
-            'phone' => '1234567890',
-            'city_id' => City::inRandomOrder()->first()->id,
+        User::factory(10)->create();
+        
+        
+        // ::create([
+        //     'name' => 'John Doe',
+        //     'email' => 'taher@gmail.com',
+        //     'password' => bcrypt('password'),
+        //     'phone' => '1234567890',
+        //     'city_id' => City::inRandomOrder()->first()->id,
 
-        ]);
+        // ]);
     }
 }

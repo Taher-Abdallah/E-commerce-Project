@@ -2,6 +2,7 @@
 
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\ProductController;
@@ -33,7 +34,10 @@ Route::name('user.')->group(function () {
     });
 
     Route::middleware('auth:web')->group(function () {
+        ############################### Wishlist Controller ################################################    
         Route::get('/wishlist', WishlistController::class)->name('wishlist');
+
+        Route::get('/cart', CartController::class)->name('cart');
         
     });
 
