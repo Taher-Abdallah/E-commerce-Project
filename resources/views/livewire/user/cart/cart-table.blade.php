@@ -116,7 +116,7 @@
             <div class="wishlist-btn cart-btn">
                 <a href="javascript:void(0);" wire:click.prevent="clearCart" class="clean-btn">Clear Cart</a>
                 <a href="#"  @click="$dispatch('updateCart')" class="shop-btn update-btn">Update Cart</a>
-                <a href="checkout.html" class="shop-btn">Proceed to Checkout</a>
+                <a href="{{ route('user.checkout') }}" class="shop-btn">Proceed to Checkout</a>
             </div>
         </div>
             @else

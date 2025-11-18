@@ -1,4 +1,6 @@
   <div>
+
+                                                           {{-- country select--}}
   <div class="form-group">
       <label for="country_id">Country</label>
       <select name="country_id" wire:model.live="countryId" class="form-control" id="country_id">
@@ -11,6 +13,9 @@
           <span class="text-danger">{{ $message }}</span>
       @enderror
   </div>
+
+
+                                              {{-- Governerate Select --}}
   <div class="form-group">
       <label for="governorate_id">Governorate</label>
       <select name="governorate_id" wire:model.live="governorateId" class="form-control" id="governorate_id">
@@ -23,6 +28,9 @@
           <span class="text-danger">{{ $message }}</span>
       @enderror
   </div>
+
+
+                                              {{-- City Select --}}
   <div class="form-group">
       <label for="city_id">City</label>
       <select name="city_id" wire:model="cityId" class="form-control" id="city_id">

@@ -15,7 +15,10 @@ class CartIcon extends Component
             $cartItem=CartItem::find($id);
             $cartItem->delete();
             $this->dispatch('cart-refresh');
+            
         }
+
+        $this->dispatch('order-summary-refresh');
     }
 
 #[On('cart-refresh')]
