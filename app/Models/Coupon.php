@@ -9,13 +9,12 @@ class Coupon extends Model
 {
     use HasFactory;
     
-    public function scopeIsValid($query)
+    public function scopeValid($query)
     {
-        return $query->WhereAny([
-            ['end_date', '>', now()],
-            ['is_active', 1],
-            ['time_used','<','limit']
-        ]);
+        return $query->where('is_active', 1)
+            ->whereDate('start_date', '<=', now())
+            ->whereDate('end_date', '>=', now())
+            ->whereColumn('time_used', '<', 'limit');
     }
 
     public function scopeNotValid($query)

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('user_name');
             $table->string('user_email');
             $table->string('user_phone');
@@ -29,6 +30,10 @@ return new class extends Migration
             $table->string('city');
             $table->string('street');
 
+            $table->string('coupon')->nullable();
+            $table->integer('coupon_discount')->default(0);
+
+            
             $table->timestamps();
         });
     }

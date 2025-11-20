@@ -365,7 +365,7 @@
         position: 'top-center',
         icon: 'success',
         title: event,
-        text: 'Message Deleted Successfully',
+        text: 'Cart Added Successfully',
         showConfirmButton: false,
         timer: 1500
       });

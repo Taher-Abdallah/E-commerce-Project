@@ -38,7 +38,9 @@ Route::name('user.')->group(function () {
         ############################### Wishlist Controller ################################################    
         Route::get('/wishlist', WishlistController::class)->name('wishlist');
         Route::get('/cart', CartController::class)->name('cart');
-        Route::get('/checkout', CheckoutController::class)->name('checkout');
+        ############################### Checkout Controller ################################################
+        Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+        Route::post('/checkout/store', [CheckoutController::class, 'store'])->name('checkout.store');
 
         
     });
